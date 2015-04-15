@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>Google Maps</title>
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAfB9P0WaG1nD2YOvPyICu8RROANionF1sO3BwLEyXxTpzGuk7rBRIWEDg5ZuxIqTf3L2n7FMCtg1SKA" type="text/javascript"></script>
+  </head>
+  <body onunload="GUnload()">
+
+      <!-- you can use tables or divs for the overall layout -->
+
+    <table border=1>
+      <tr>
+        <td>
+           <div id="map" style="width: 550px; height: 450px"></div>
+        </td>
+        <td width = 150 valign="top" style="text-decoration: underline; color: #4444ff;">
+           <div id="side_bar"></div>
+        </td>
+      </tr>
+
+    </table>
+
+	
+    <a href="map.html">Reload</a>
+
+    <noscript><b>JavaScript must be enabled in order for you to use Google Maps.</b> 
+      However, it seems JavaScript is either disabled or not supported by your browser. 
+      To view Google Maps, enable JavaScript by changing your browser options, and then 
+      try again.
+    </noscript>
+ 
+
+    <script type="text/javascript">
+    //<![CDATA[
+    
+    if (GBrowserIsCompatible()) { 
+
+      // this variable will collect the html which will eventually be placed in the side_bar
+      var side_bar_html = "";
+
+      // arrays to hold copies of the markers and html used by the side_bar
+      // because the function closure trick doesnt work there
+      var gmarkers = [];
+
+      // A function to create the marker and set up the event window
+      // Dont try to unroll this function. It has to be here for the function closure
+      // Each instance of the function preserves the contends of a different instance
+      // of the "marker" and "html" variables which will be needed later when the event triggers.    
+      function createMarker(point,name,html) {
+        var marker = new GMarker(point);
+        GEvent.addListener(marker, "click", function() {
+          marker.openInfoWindowHtml(html);
+        });
+		
+		// save the info we need to use later for the side_bar
+		gmarkers.push(marker);
+		// add a line to the side_bar html
+		side_bar_html += '<a href="javascript:myclick(' + (gmarkers.length-1) + ')">' + name + '<\/a><br>';
+
+		return marker;
+      }
+
+      // This function picks up the click and opens the corresponding info window
+      function myclick(i) {
+        GEvent.trigger(gmarkers[i], "click");
+      }
+
+	  
+      // Display the map, with some controls and set the initial location 
+      var map = new GMap2(document.getElementById("map"));
+      map.addControl(new GLargeMapControl());
+      map.addControl(new GMapTypeControl());
+      map.setCenter(new GLatLng(40.7110,-74.0000),8);
+    
+      // Set up three markers with info windows 
+    
+      var point = new GLatLng(40.65654,-73.90138);
+      var marker = createMarker(point,'This place','<div style="width:240px">Some stuff to display in the First Info Window. With a <a href="map.html">Link<\/a> to reload.<\/div>')
+      map.addOverlay(marker);
+
+      var point = new GLatLng(40.91892,-73.89231);
+      var marker = createMarker(point,'That place','Some stuff to display in the<br>Second Info Window')
+      map.addOverlay(marker);
+
+      var point = new GLatLng(40.82589,-74.10040);
+      var marker = createMarker(point,'Other place','Some stuff to display in the<br>Third Info Window')
+      map.addOverlay(marker);
+	  
+      // put the assembled side_bar_html contents into the side_bar div
+      document.getElementById("side_bar").innerHTML = side_bar_html;
+
+
+    }
+    
+    // display a warning if the browser was not compatible
+    else {
+      alert("Sorry, the Google Maps API is not compatible with this browser");
+    }
+
+    // This Javascript is based on code provided by the
+    // Community Church Javascript Team
+    // http://www.bisphamchurch.org.uk/   
+    // http://econym.org.uk/gmap/
+
+    //]]>
+    </script>
+
+  </body>
+
+</html>
+
+
+
+

@@ -1,0 +1,40 @@
+.container {
+	border: 1px solid #000000;
+	margin: 15px 0px 35px 0px;
+}
+
+.title {
+	position: relative;
+	background-color: #EEEEE0;
+	text-align: center;
+	font-family: sans-serif;
+	border-width: 2px 0px 1px 1px;
+	border-color: #FFFFF0;
+	border-bottom-color: #000000;
+	border-style: solid;
+	padding: 5px 5px 5px 5px;
+}
+.textbody {
+	position: relative;
+	text-align: justify;
+	font-family: serif;
+	margin: 20px;
+}
+.pane {
+	position: relative;
+	background-color: #F0F5FF;
+	border-width: 1px;
+	border-color: #000099;
+	border-style: solid;
+	padding: 1px;
+}
+.comment {
+	border-bottom: 1px dotted #999999;
+	margin: 10px 10px 35px 10px;
+}
+
+blockquote {
+	background-color: #EEEEEE;
+	padding: 5px;
+}
+

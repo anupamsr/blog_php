@@ -1,0 +1,56 @@
+set autoindent 	"enable automatic indentation
+set nocompatible "with Vi
+set esckeys 	"Function keys that start with an <Esc> are recognized in Insert
+set hidden 		"don't unload files but just hide them
+set showcmd		"show partial commands in status line
+set wildmenu	"enable command line completion in enhanced mode
+set noexpandtab	"don't convert tab to spaces
+set nostartofline "keeps cursor in same column on some commands
+set ruler		"show row and column numbers on status line
+set backspace=2	"allows backspace to work everywhere
+set formatoptions=cqrtn "set formatting options (for comments, paragraphs etc.); works with autoindent
+set laststatus=2 "show status bar always
+set shortmess=atI "shortens all the messages
+set whichwrap=<,>,[,] "allows wrap only when cursor keys are used
+set tabstop=4	"tab length is 4 characters
+set shiftwidth=4 "indent with 4 spaces
+set comments=s1:/*,mb:*,ex:*/,://,b:# "define what starts a comment (no use here because I compiled with +comments
+set viminfo=%,'50,\"50,:50 "defines what to store in .viminfo
+set listchars=tab:>-,trail:.,extends:> "Strings to load in List mode
+set pastetoggle=<F5> "press F5 to toggle through paste mode
+set nomore		"don't pause when screen in filled
+set mouse=a		"enable mouse everywhere
+set mousemodel=popup_setpos "See help 
+set incsearch	"do incremental search
+set nodigraph	"remove annoying feature for entering unicode characters
+
+" Restore cursor to file position in previous editing session
+
+au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+
+autocmd FileType c,cpp,slang set cindent
+
+syn on
+filetype on
+filetype indent on
+filetype plugin on
+
+ino <Down> <C-O>gj
+ino <Up> <C-O>gk
+nno <Down> gj
+nno <Up> gk
+
+nno <F2> :set hls!<bar>set hls?<CR>
+nno <F3> :syn clear<CR>
+nno <F4> :set nu!<bar>set nu?<CR>
+if $TERM == "xterm"
+	set background=dark
+"else
+"	set background=light
+endif
+
+" Gets annoying if default.
+"setlocal spell
+
+set guifont=Bitstream\ Vera\ Sans\ Mono\ 8
+
