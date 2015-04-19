@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US.UTF-8" lang="en_US.UTF-8">
 	<head>
 		<title>Walled Garden Near Ghat - Blog</title>
-		<meta name="Author" content="Anupam Srivastava, webmaster@walledgardennearghat.com" />
+		<meta name="Author" content="Anupam Srivastava, webmaster@familyknow.in" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="Date" content="Unix time for last update: 1212829250" />
 		<meta http-equiv="Cache-Control" content="No-Cache" />
@@ -13,7 +13,7 @@
 		<meta name="Googlebot" content="noarchive" />
 		<link rel="icon" type="image/png" href="favicon.ico" />
 		<link rel="stylesheet" href="css/stylesheet.css" type="text/css" />
-		<link rel="alternate" title="Blog RSS" href="http://www.walledgardennearghat.com/rss.php" type="application/rss+xml" />
+		<link rel="alternate" title="Blog RSS" href="http://www.familyknow.in/rss.php" type="application/rss+xml" />
 	</head>
 	<body>
 		<div style="text-align: center; font-weight: bold;">&copy; 2008 Anupam Srivastava, All Rights Reserved</div>
@@ -153,11 +153,11 @@ if ($more_showed == 1) {
 mysql_close();
 ?>
 		<p style="text-align: right;">
-		<a href="http://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Fwww.walledgardennearghat.com%2Fcss%2Fstylesheet.css&amp;profile=css21&amp;usermedium=all&amp;warning=1"><img style="border:0;width:88px;height:31px" src="images/vcss" alt="Valid CSS!" /></a>
+		<a href="http://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Fwww.familyknow.in%2Fcss%2Fstylesheet.css&amp;profile=css21&amp;usermedium=all&amp;warning=1"><img style="border:0;width:88px;height:31px" src="images/vcss" alt="Valid CSS!" /></a>
 		<a href="http://validator.w3.org/check?uri=referer"><img style="border:0;width:88px;height:31px" src="images/valid-xhtml10" alt="Valid HTML 4.01 Transitional" /></a>
 		</p>
 		<div style="text-align: center;">
-			<tt>Contact at webmaster @ walledgardennearghat.com for more information.</tt>
+			<tt>Contact at webmaster @ familyknow.in for more information.</tt>
 		</div>
 	</body>
 </html>

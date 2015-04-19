@@ -30,9 +30,9 @@ echo '<?xml version="1.0" encoding="utf-8"?>
  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
  xmlns:content="http://purl.org/rss/1.0/modules/content/"
 >
-	<channel rdf:about="http://www.walledgardennearghat.com/blog.php">
+	<channel rdf:about="http://www.familyknow.in/blog.php">
 		<title>Walled Garden Near Ghat - Blog</title>
-		<link>http://www.walledgardennearghat.com/rss.php</link>
+		<link>http://www.familyknow.in/rss.php</link>
 		<description>RSS feed for Anupam\'s personal blog</description>
 		<dc:rights>Copyright 2008, Anupam Srivastava</dc:rights>
 		<dc:language>en-us</dc:language>
@@ -45,7 +45,7 @@ echo '</sy:updateBase>
 			<rdf:Seq>';
 for ($j = 0; $j < $i; ++$j) {
 	echo '
-				<rdf:li rdf:resource="http://www.walledgardennearghat.com/comment.php?name='.$entry[$j]['TIME'][0]['data'].'"/>';
+				<rdf:li rdf:resource="http://www.familyknow.in/comment.php?name='.$entry[$j]['TIME'][0]['data'].'"/>';
 }
 
 echo '
@@ -55,9 +55,9 @@ echo '
 
 for ($j = 0; $j < $i; ++$j) {
 	echo '
-	<item rdf:about="http://www.walledgardennearghat.com/comment.php?name='.$entry[$j]['TIME'][0]['data'].'">
+	<item rdf:about="http://www.familyknow.in/comment.php?name='.$entry[$j]['TIME'][0]['data'].'">
 		<title>'.$entry[$j]['TITLE'][0]['data'].'</title>
-		<link>http://www.walledgardennearghat.com/comment.php?name='.$entry[$j]['TIME'][0]['data'].'</link>
+		<link>http://www.familyknow.in/comment.php?name='.$entry[$j]['TIME'][0]['data'].'</link>
 		<dc:date>';
 	$myDate = $entry[$j]['TIME'][0]['data'];
 	$W3CDTFdate = preg_replace(

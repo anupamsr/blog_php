@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US.UTF-8" lang="en_US.UTF-8">
 	<head>
 		<title>Walled Garden Near Ghat - Comment</title>
-		<meta name="Author" content="Anupam Srivastava, webmaster@walledgardennearghat.com" />
+		<meta name="Author" content="Anupam Srivastava, webmaster@familyknow.in" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="Date" content="Unix time for last update: 1212836207" />
 		<meta http-equiv="Cache-Control" content="No-Cache" />
@@ -98,7 +98,7 @@ if (((int) $blog['child']['TIME'][0]['data']) < 10000) {
 	echo "<br />\n";
 	echo ((int) $blog['child']['TIME'][0]['data']);
 	echo "<br />\n";
-	die ('Serious error in table creation detected. Please mail webmaster@walledgardennearghat.com the current URL and this error.');
+	die ('Serious error in table creation detected. Please mail webmaster@familyknow.in the current URL and this error.');
 }
 
 $query=sprintf("CREATE TABLE IF NOT EXISTS t%d (id int(6) NOT NULL auto_increment, ipaddress varchar(15) NOT NULL, date int(11) NOT NULL, comname varchar(30) NOT NULL, email varchar(50) NOT NULL, comment text(1000) NOT NULL, PRIMARY KEY (id), UNIQUE id (id), KEY id_2 (id))", mysql_real_escape_string($blog['child']['TIME'][0]['data']));
@@ -148,7 +148,7 @@ if ($submission == TRUE) {
 		$query = sprintf("INSERT INTO t%d VALUES('', '%s', '%d', '%s', '%s', '%s')", mysql_real_escape_string($blog['child']['TIME'][0]['data']), $string_ipaddress, $int_date, $string_name, $string_email, $string_comment);
 		$result = mysql_query($query);
 		if ($result == FALSE) {
-			die('<p><strong>Error submitting comment.</strong></p><p>This should not happen. Please inform at webmaster@walledgardennearghat.com.</p></body></html>');
+			die('<p><strong>Error submitting comment.</strong></p><p>This should not happen. Please inform at webmaster@familyknow.in.</p></body></html>');
 		} else {
 			$msg_mail = wordwrap('
 A new message is waiting for you.
@@ -159,7 +159,7 @@ Comment:
 '.$string_comment.'
 
 -------END-------');
-			mail('webmaster@walledgardennearghat.com','You have a New Comment on your blog',$msg_mail);
+			mail('webmaster@familyknow.in','You have a New Comment on your blog',$msg_mail);
 		}
 	} else {
 		/* If reCAPTCHA failed, exit */
@@ -257,11 +257,11 @@ Comment:
 mysql_close();
 ?>
 		<p style="text-align: right;">
-		<a href="http://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Fwww.walledgardennearghat.com%2Fcss%2Fstylesheet.css&amp;profile=css21&amp;usermedium=all&amp;warning=1"><img style="border:0;width:88px;height:31px" src="images/vcss" alt="Valid CSS!" /></a>
+		<a href="http://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Fwww.familyknow.in%2Fcss%2Fstylesheet.css&amp;profile=css21&amp;usermedium=all&amp;warning=1"><img style="border:0;width:88px;height:31px" src="images/vcss" alt="Valid CSS!" /></a>
 		<a href="http://validator.w3.org/check?uri=referer"><img style="border:0;width:88px;height:31px" src="images/valid-xhtml10" alt="Valid XHTML 1.0 Transitional" /></a>
 		</p>
 		<div style="text-align: center;">
-			<tt>Contact at webmaster @ walledgardennearghat.com for more information.</tt>
+			<tt>Contact at webmaster @ familyknow.in for more information.</tt>
 		</div>
 	</body>
 </html>
