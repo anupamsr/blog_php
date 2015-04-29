@@ -40,7 +40,7 @@ if (isset($getvar) && strlen(trim($getvar)) != 0) {
 	foreach($blogs['BLOGS'][0]['child']['BLOG'] as $blog) {
 		if ($_GET['name'] === $blog['child']['TIME'][0]['data']) {
 			/* If exists, show it... */
-			echo '		<p><a href="blog.php">Go Back</a></p>
+			echo '		<p><a href="/blog/">Go Back</a></p>
 		<noscript><div style="text-align: center;"><strong>JavaScript is disabled in your browser. You should enable it.</strong></div></noscript>
 ';
 			echo '
@@ -166,7 +166,7 @@ Comment:
 		$error = $resp->error;
 		die('<p><strong>The reCAPTCHA was not entered correctly. Go back and try it again.</strong></p><p>Error: '.$error.'</p></body></html>');
 	}
-	die('<p style="text-align: center;">Comment succesfully submitted.</p><p style="text-align: center;"><a href="blog.php">Go Back</a></p></body></html>');
+	die('<p style="text-align: center;">Comment succesfully submitted.</p><p style="text-align: center;"><a href="/blog/">Go Back</a></p></body></html>');
 } else {
 	/* If we are not submitting, show the already present comments */
 	$query = sprintf("SELECT * FROM t%d ORDER BY date DESC", mysql_real_escape_string($blog['child']['TIME'][0]['data']));
