@@ -1,3 +1,5 @@
+Tiny Blog Platform
+==================
 While this is pretty much the whole source code of my website, the most
 intersting part here the Tiny Blog Platform contained in it.
 
