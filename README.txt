@@ -9,7 +9,7 @@ The motive of creating this Tiny Blog Platform is:
    each functionality should be as easy as adding/deleting corresponding file.
 
 The code is in /blog/ directory. It contains
-1. blog.php - For displaying blogs.
+1. index.php - For displaying blogs.
 2. blog.xml - Sample blog entries.
 3. blog.xsd - For validation of blog.xml. You may omit this file.
 4. comment.php - For displaying and submitting comments.
@@ -18,7 +18,8 @@ The code is in /blog/ directory. It contains
 Feel free to contact me if you have any questions or see any problem.
 
 
-==Testing==
+Testing
+=======
 To test the whole show, you will need to create an empty database in MySQL and
 modify blog.php and comment.php accordingly (you need to specify username and
 password, as well as database name). If you want to have reCAPTCHA, you need
