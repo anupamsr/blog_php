@@ -25,56 +25,68 @@
 				<ol type="i">
 <?php
 
-$url='thewholeblog.xml.gz';
-
-putenv("TZ=Europe/London");
+$url = 'thewholeblog.xml.gz';
 
 include 'xml_read.php';
 
 $xml_parser = new sxml;
-$src=implode ('', gzfile ($url));
+$src=implode('', gzfile ($url));
 $xml_parser->parse($src);
-$blogs=$xml_parser->data;
+$blogs = $xml_parser->data;
 
-function myIsInt ($x) {
-    return (is_numeric($x) ? intval($x) == $x : false);
+function myIsInt ($x)
+{
+	return (is_numeric($x) ? intval($x) == $x : false);
 }
 
 $more_counter_default = 10;
 
-if (isset($_GET['start']) && strlen(trim($_GET['start'])) != 0 && myIsInt($_GET['start'])) {
+if (isset($_GET['start']) && strlen(trim($_GET['start'])) != 0 && myIsInt($_GET['start']))
+{
 	$start_counter = $_GET['start'];
-} else {
+}
+else
+{
 	$start_counter = 0;
 }
-if (isset($_GET['more']) && strlen(trim($_GET['more'])) != 0 && myIsInt($_GET['more'])) {
+if (isset($_GET['more']) && strlen(trim($_GET['more'])) != 0 && myIsInt($_GET['more']))
+{
 	$more_counter = $_GET['more'];
-} else {
+}
+else
+{
 	$more_counter = $more_counter_default;
 }
 
-if ($more_counter < 1) {
+if ($more_counter < 1)
+{
 	$more_counter = $more_counter_default;
 }
 
 $counter = 0;
 $shown = 0;
 $more_showed = 0;
-foreach($blogs['BLOGS'][0]['child']['BLOG'] as $blog) {
+foreach ($blogs['BLOGS'][0]['child']['BLOG'] as $blog)
+{
 	$counter = $counter + 1;
-	if ($counter > $start_counter) {
+	if ($counter > $start_counter)
+	{
 		$shown = $shown + 1;
-		if ($shown <= $more_counter) {
+		if ($shown <= $more_counter)
+		{
 			$entry[$shown] = $blog['child'];
 			echo "\t\t\t\t\t".'<li><a href="#'.$entry[$shown]['TIME'][0]['data'].'">'.$entry[$shown]['TITLE'][0]['data'].'</a></li>'."\n";
-		} else {
+		}
+		else
+		{
 			echo "\t\t\t\t\t".'<li><a href="#more">» More</a></li>'."\n";
 			$more_showed = 1;
 			break;
 		}
 	}
 }
-if ($shown == 0) {
+if ($shown == 0)
+{
 	echo "\t\t\t\t\t<li>Really, this should not have happened :)</li>";
 }
 echo "\t\t\t\t</ol>\n";
@@ -91,21 +103,24 @@ mysql_connect(localhost,$username,$password);
 @mysql_select_db($database) or die( "Unable to select database");
 
 $num_blogs = $shown - 1;
-if ($more_showed == 0) {
+if ($more_showed == 0)
+{
 	$num_blogs = $shown;
 }
 
-for ($i = 1; $i <= $num_blogs; ++$i) {
+for ($i = 1; $i <= $num_blogs; ++$i)
+{
 	$query = sprintf("SELECT * FROM t%d", $entry[$i]['TIME'][0]['data']);
 	$num = 0;
 	$result = mysql_query($query);
-	if ($result) {
+	if ($result)
+	{
 		$num = mysql_num_rows($result);
 	}
 	echo '
 		<div class="container">
 			<a name="'.$entry[$i]['TIME'][0]['data'].'"></a>
-			<div class="title"><h3>'.$entry[$i]['TITLE'][0]['data'].'</h3>'.date('h:i a, j F Y', $entry[$i]['TIME'][0]['data']).'<h3></h3></div>
+			<div class="title"><h3>'.$entry[$i]['TITLE'][0]['data'].'</h3>'.gmdate('h:i a, j F Y', $entry[$i]['TIME'][0]['data']).'<h3></h3></div>
 			<div class="textbody">
 				'.$entry[$i]['TEXT'][0]['data'].'
 				<p><br /></p>
@@ -114,7 +129,8 @@ for ($i = 1; $i <= $num_blogs; ++$i) {
 		</div>';
 }
 
-if ($more_showed == 1) {
+if ($more_showed == 1)
+{
 	/* Go back by 1, so that we don't miss the current blog */
 	$counter = $counter - 1;
 	
@@ -122,24 +138,33 @@ if ($more_showed == 1) {
 		<div class="pane" style="text-align: center;">
 			<a name="more"></a><h3>
 				<a href="?start='.$counter.'&amp;more='.$more_counter.'">More: Click here for older posts</a> &mdash;
-				<a href="?start='.$start_counter.'&amp;more=10">';
-	if ($more_counter == 10) {
+	<a href="?start='.$start_counter.'&amp;more=10">';
+	if ($more_counter == 10)
+	{
 		echo '<em>(10)</em>';
-	} else {
+	}
+	else
+	{
 		echo '(10)';
 	}
 	echo '</a>
 				<a href="?start='.$start_counter.'&amp;more=20">';
-	if ($more_counter == 20) {
+	if ($more_counter == 20)
+	{
 		echo '<em>(20)</em>';
-	} else {
+	}
+	else
+	{
 		echo '(20)';
 	}
 	echo '</a>
 				<a href="?start='.$start_counter.'&amp;more=50">';
-	if ($more_counter == 50) {
+	if ($more_counter == 50)
+	{
 		echo '<em>(50)</em>';
-	} else {
+	}
+	else
+	{
 		echo '(50)';
 	}
 	echo '</a>
