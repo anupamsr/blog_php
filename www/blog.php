@@ -17,7 +17,7 @@
 	</head>
 	<body>
 		<div style="text-align: center; font-weight: bold;">&copy; 2008 Anupam Srivastava, All Rights Reserved</div>
-		<p><a href="main.html">Go Back</a></p>
+		<p><a href="main">Go Back</a></p>
 		<noscript><div style="text-align: center;"><strong>JavaScript is disabled in your browser. You should enable it.</strong></div></noscript>
 		<a name="TOC"></a>
 		<div style="padding: 10px;">

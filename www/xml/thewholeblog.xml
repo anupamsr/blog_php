@@ -237,7 +237,7 @@
 			<p>I also changed the current CSS style-sheet for the blog, and I think now it looks very nice - and so it will stay just like this for quite some time. Although, I would say, the blue panel is quite ugly and doesn’t really fit, for now I have left it. The <em>major changes</em> are addition of “More” link, so that this page never gets too big (a calendar and a tag system is still left - will add them in time) and the reporting format of time of comments (“2 seconds ago” etc.).</p>
 			<p>I am happy for now :)</p>
 			<p><em>Walled Garden Near Ghat - tested / OK from Lynx and w3m.</em></p>
-			<p><a href="http://familyknow.in/other_programs.html">Source code is here.</a></p>
+			<p><a href="http://familyknow.in/other_programs">Source code is here.</a></p>
 			<p style="font-size: small;"><em>Update (07/JUN/08): Added link to source code.</em></p>]]>
 		</text>
 	</blog>

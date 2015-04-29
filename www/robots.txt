@@ -3,4 +3,4 @@ Disallow: /cgi-bin/
 #Disallow: /images/
 Disallow: /tmp/
 Disallow: /private/
-Disallow: /blog*
+Disallow: /xml/
