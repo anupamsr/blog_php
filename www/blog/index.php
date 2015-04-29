@@ -93,7 +93,7 @@ echo "\t\t\t\t</ol>\n";
 echo "\t\t\t</div>\n";
 echo "\t\t</div>";
 
-echo '<a href="rss.php" style="text-decoration: none;"><img src="images/rss.jpg" alt="RSS feed" style="border: 0;" /> Subscribe to RSS feed.</a>';
+echo '<a href="rss.php" style="text-decoration: none;"><img src="/images/rss.jpg" alt="RSS feed" style="border: 0;" /> Subscribe to RSS feed.</a>';
 
 $username="walledga_usr";
 $password="UsoMango10(~";

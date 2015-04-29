@@ -63,10 +63,10 @@ for ($j = 0; $j < $i; ++$j) {
 	$W3CDTFdate = preg_replace(
        "/(\+|\-)([0-9]{2})([0-9]{2})/"
        ,"$1$2:$3"
-       , date("O",$myDate));
+       , gmdate("O",$myDate));
 printf("%sT%s%s"
-       ,date("Y-m-d",$myDate)
-       ,date("H:i:s",$myDate)
+       ,gmdate("Y-m-d",$myDate)
+       ,gmdate("H:i:s",$myDate)
 	   ,$W3CDTFdate);
 	echo '</dc:date>
 		<dc:creator>Anupam Srivastava</dc:creator>
