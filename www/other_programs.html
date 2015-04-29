@@ -6,44 +6,77 @@
 		<meta name="Date" content="Unix time for last update: 1215032364">
 		<meta http-equiv="Cache-Control" content="Public">
 		<meta name="Keywords" content="anupamsr, mapuna, Anupam Srivastava, Rogue the One, programs">
-		<link rel="icon" type="image/png" href="favicon.ico">
-		<link rel="stylesheet" href="css/stylesheet.css" type="text/css">
+		<link rel="icon" type="image/png" href="/favicon.ico">
+		<link rel="stylesheet" href="/css/stylesheet.css" type="text/css">
+		<style type="text/css">
+ul
+{
+	margin: 0 auto;
+	padding: 0;
+}
+
+/* The wider the #list_wrapper is, the more columns will fit in it */
+#list_wrapper
+{
+	width: 200px
+}
+
+/* The wider this li is, the fewer columns there will be */
+ul.multiple_columns li
+{
+	text-align: left;
+	float: left;
+	list-style: none;
+	height: 30px;
+	width: 50px;
+}
+		</style>
 	</head>
 	<body>
 		<p><a href="/main">Go Back</a></p>
 		<noscript><div style="text-align: center;"><strong>JavaScript is disabled in your browser. You should enable it.</strong></div></noscript>
 		<h1>Computer Related</h1>
-		<p><a href="images/screen-1208129592.png">Screen shot (104 K)</a></p>
-		<p>My files: (or actually, my final copy-pastes)</p>
+		<h2>Evolution of my desktop</h2>
+		<div id="list_wrapper">
+			<ul class="multiple_columns">
+				<li><a
+					href="/images/screenshots/screen-1208129592.png">Sun, 13
+					Apr 2008 23:33:12 GMT</a></li>
+			</ul>
+		</div>
+		<p>
+		My personal INI files, in case they interest you, are location at this
+		<a href="https://github.com/anupamsr/anupamsr_config">GitHub
+			repository</a>. This includes .vimrc, .zshrc, .screenrc as well as
+		.fvwmrc along with all the icons.
+		</p>
+		<p>
+		Btw, ZSH is the best shell out there and should immediately start
+		using it. If you are stuck with bash and cannot change your shell to
+		zsh, use following in your <q>.bashrc</q>
+		<blockquote><tt>exec zsh --login</tt></blockquote>
+		In the rare case it breaks something, wrap this line around a check
+		for login shell (<tt>$-</tt> should contain <tt>i</tt>).
+		</p>
+		<p>
+		Also, since <a
+			href="https://en.wikipedia.org/wiki/Tavis_Ormandy">Tavis
+			Ormandy</a> is has retired from Gentoo community and doesn't hang
+		around the forums anymore, the only place you will get the icons he
+		used to use with .fvwmrc is at my github account mentioned above. No
+		to mention that I seem to be the only person who uses his config
+		(though heavily modified and simplified over time).
+		</p>
+		<h2>Other Programs</h2>
+		<h2>Some code</h2>
 		<ol>
-			<li><a href="vimrc.txt">vimrc</a> - Vim config file. Save it in your home directory as <q>.vimrc</q>.</li>
-			<li><a href="dotvim.tar.bz2">dotvim.tar.bz2</a> - .vim directory tarball. Untar in your home directory as  <q>.vim</q>.</li>
-			<li><a href="zshrc.txt">zshrc</a> - ZSH config file. Save it in your home directory as <q>.zshrc</q>. If you are stuck with bash and cannot change your shell to zsh, use following in your <q>.bashrc</q>.
-			<blockquote><tt>exec zsh --login</tt></blockquote>
-			</li>
-			<li><a href="screenrc.txt">screenrc</a> - GNU Screen config file. Save it in your home directory as <q>.screenrc</q>.</li>
-			<li><a href="fvwm.tar.bz2">fvwm2rc with icons</a> - Basically <a href="mailto:taviso_REMOVE_CAPITALS_AND_UNDERSCORE_@gentoo.org">Tavis Ormandy’s</a> file, with only a little modification to suit my needs. The icons are included in the tar ball. Alternatively you can download the icons from <a href="http://fvwm.lair.be/viewtopic.php?t=1269">this place</a>. Untar it in your home directory. It will create a directory named <q>.fvwm</q>.<br>
-			<strong>UPDATE:</strong> Actually, it seems Tavis is not active anymore, and so your only option is to download the icons from here.
-			</li>
-			<!-- li><a href="my_shellscripts.tar.bz2">My shell scripts</a> - Some handy shell scripts to do various tasks.</li -->
+			<li>An example of <q>Reflections on Trusting trust<q>: <a
+						href="trusting_trust.c">trusting_trust.c</a></li>
+			<li>The source code for this website (PHP5) can be found at <a
+				href="https://github.com/anupamsr/blog_php">this GitHub
+				account</a>. Go through the README.txt there to understand the
+			whole layout and how to run it.</li>
 		</ol>
-		<h1>Other Programs</h1>
-		<p>Some code</p>
-		<ol>
-			<li>
-			<p>An example of <q>Reflections on Trusting trust</q> sorta program: <a href="trusting_trust.c">trusting_trust.c</a></p>
-			<p>&mdash; does nothing, except prints out the source code again :) in C</p>
-			</li>
-			<li>
-			<p>The source code for blogs and comments in PHP 4: <a href="source.zip">source.zip</a></p>
-			<p>This ZIP file contains: blog.php (for showing blogs), blog.xml (sample blogs), blog.xsd (you may omit this, but is just there for standard compliance), comment.php (for showing and submitting comments), recaptchalib.php (for reCAPTCHA spam protection) and xml_read.php (needed for parsing XML). If you have any other questions, mail me.</p>
-			<p>To test the whole show, you will need to create an empty database in MySQL and modify blog.php and comment.php accordingly (you need to specify username and password, as well as database name). If you want to have reCAPTCHA, you need to register there and modify comment.php accordingly. That is all you need to do :)</p>
-			<p>&mdash; the text file contains blog.php, comment.php, sample blog.xml and blog.xsd</p>
-			</li>
-		</ol>
-		<hr>
-		<p>All sources, until specified explicitly in the downloadable package, are released under Public Domain.</p>
-		<br>
 		<p style="text-align: right;">
 		<a href="http://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Fwww.familyknow.in%2Fcss%2Fstylesheet.css&amp;profile=css21&amp;usermedium=all&amp;warning=1"><img
 			src="http://jigsaw.w3.org/css-validator/images/vcss-blue"

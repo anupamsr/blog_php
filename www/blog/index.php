@@ -8,15 +8,14 @@
 		<meta http-equiv="Cache-Control" content="No-Cache" />
 		<meta http-equiv="Pragma" content="No-Cache" />
 		<meta http-equiv="Expires" content="Mon, 01 Jan 2002 00:00:00 GMT" />
-		<meta name="Copyright" content="&copy; 2008 Anupam Srivastava, All Rights Reserved" />
+		<meta name="Copyright" content="&copy; 2015 Anupam Srivastava, All Rights Reserved" />
 		<meta name="Robots" content="index,follow,noarchive" />
 		<meta name="Googlebot" content="noarchive" />
-		<link rel="icon" type="image/png" href="favicon.ico" />
-		<link rel="stylesheet" href="css/stylesheet.css" type="text/css" />
+		<link rel="icon" type="image/png" href="/favicon.ico" />
+		<link rel="stylesheet" href="/css/stylesheet.css" type="text/css" />
 		<link rel="alternate" title="Blog RSS" href="http://www.familyknow.in/rss.php" type="application/rss+xml" />
 	</head>
 	<body>
-		<div style="text-align: center; font-weight: bold;">&copy; 2008 Anupam Srivastava, All Rights Reserved</div>
 		<p><a href="/main">Go Back</a></p>
 		<noscript><div style="text-align: center;"><strong>JavaScript is disabled in your browser. You should enable it.</strong></div></noscript>
 		<a name="TOC"></a>

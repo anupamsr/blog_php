@@ -56,7 +56,7 @@
 		// save the info we need to use later for the side_bar
 		gmarkers.push(marker);
 		// add a line to the side_bar html
-		side_bar_html += '<a href="javascript:myclick(' + (gmarkers.length-1) + ')">' + name + '<\/a><br>';
+		side_bar_html += '<a href="javascript:myclick(' + (gmarkers.length-1) + ')">' + name + '<\/a><br/>';
 
 		return marker;
       }
@@ -80,11 +80,11 @@
       map.addOverlay(marker);
 
       var point = new GLatLng(40.91892,-73.89231);
-      var marker = createMarker(point,'That place','Some stuff to display in the<br>Second Info Window')
+      var marker = createMarker(point,'That place','Some stuff to display in the<br/>Second Info Window')
       map.addOverlay(marker);
 
       var point = new GLatLng(40.82589,-74.10040);
-      var marker = createMarker(point,'Other place','Some stuff to display in the<br>Third Info Window')
+      var marker = createMarker(point,'Other place','Some stuff to display in the<br/>Third Info Window')
       map.addOverlay(marker);
 	  
       // put the assembled side_bar_html contents into the side_bar div

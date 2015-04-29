@@ -34,7 +34,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>
 		<title>Walled Garden Near Ghat - Blog</title>
 		<link>http://www.familyknow.in/rss.php</link>
 		<description>RSS feed for Anupam\'s personal blog</description>
-		<dc:rights>Copyright 2008, Anupam Srivastava</dc:rights>
+		<dc:rights>Copyright 2015, Anupam Srivastava</dc:rights>
 		<dc:language>en-us</dc:language>
 		<sy:updatePeriod>hourly</sy:updatePeriod>
 		<sy:updateFrequency>1</sy:updateFrequency>
