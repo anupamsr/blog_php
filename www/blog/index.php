@@ -99,8 +99,7 @@ $username="walledga_usr";
 $password="UsoMango10(~";
 $database="walledga_com";
 
-mysql_connect(localhost,$username,$password);
-@mysql_select_db($database) or die( "Unable to select database");
+$mysqli = new mysqli('localhost', $username, $password, $database);
 
 $num_blogs = $shown - 1;
 if ($more_showed == 0)
@@ -110,23 +109,35 @@ if ($more_showed == 0)
 
 for ($i = 1; $i <= $num_blogs; ++$i)
 {
-	$query = sprintf("SELECT * FROM t%d", $entry[$i]['TIME'][0]['data']);
-	$num = 0;
-	$result = mysql_query($query);
-	if ($result)
-	{
-		$num = mysql_num_rows($result);
-	}
 	echo '
+<div class="container">
+	<a name="'.$entry[$i]['TIME'][0]['data'].'"/>
+	<div class="title">
+		<h3>'.$entry[$i]['TITLE'][0]['data'].'</h3>'.gmdate('h:i a, j F Y', $entry[$i]['TIME'][0]['data']).'
+	</div>
+	<div class="textbody">
+		'.$entry[$i]['TEXT'][0]['data'].'
+		<p><br/></p>
 		<div class="container">
 			<a name="'.$entry[$i]['TIME'][0]['data'].'"></a>
-			<div class="title"><h3>'.$entry[$i]['TITLE'][0]['data'].'</h3>'.gmdate('h:i a, j F Y', $entry[$i]['TIME'][0]['data']).'<h3></h3></div>
+			<div class="title">
+				<h3>'.$entry[$i]['TITLE'][0]['data'].'</h3>'.gmdate('h:i a, j F Y', $entry[$i]['TIME'][0]['data']).'
+			</div>
 			<div class="textbody">
 				'.$entry[$i]['TEXT'][0]['data'].'
-				<p><br /></p>
-				<p style="text-align: left; font-size: small;"><em><a href="comment.php?name='.$entry[$i]['TIME'][0]['data'].'" style="text-decoration: none;">Comments ('.$num.') / Permanent link</a></em> &mdash; <a href="#TOC" style="text-decoration: none;"><tt>GO TO TOC</tt></a></p>
-			</div>
-		</div>';
+			<p><br /></p>';
+
+	$num = 0;
+	$result = $mysqli->query("SELECT * FROM t%d", $entry[$i]['TIME'][0]['data']);
+	if ($result)
+	{
+		$num = $result->num_rows;
+		$result->close();
+	}
+	echo '
+			<p style="text-align: left; font-size: small;"><em><a href="comment.php?name='.$entry[$i]['TIME'][0]['data'].'" style="text-decoration: none;">Comments ('.$num.') / Permanent link</a></em> &mdash; <a href="#TOC" style="text-decoration: none;"><tt>GO TO TOC</tt></a></p>
+		</div>
+	</div>';
 }
 
 if ($more_showed == 1)
@@ -174,7 +185,7 @@ if ($more_showed == 1)
 ';
 }
 
-mysql_close();
+mysqli->close();
 ?>
 		<p style="text-align: right;">
 		<a href="http://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Fwww.familyknow.in%2Fcss%2Fstylesheet.css&amp;profile=css21&amp;usermedium=all&amp;warning=1"><img
