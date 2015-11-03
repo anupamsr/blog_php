@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>WebPatch - Anupam's Corner</title>
+<!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<meta name="keywords" content=
+"anupamsr,mapuna,Anupam Srivastava,Rogue the One,UML,Practical UML">
+<meta name="description" content="Practical UML">
+<meta charset="utf-8">
+<meta name="author" content="Anupam Srivastava">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="icon" type="image/png" href="/favicon.ico">
+</head>
+<body>
+<div style="position: relative; margin: auto; width: 90%">
+<header class="center serif-header">Practical UML: A Hands-On Introduction for Developers</header>
+<nav>
+<a href="/resume">Resume</a><br>
+<a href="/cv">Curriculum Vit&aelig;</a><br>
+<a href="/guitar">Guitar</a><br>
+<a href="/software">Software</a><br>
+<a href="/sketches">Sketches</a><br>
+<a href="/fun">Fun</a><br>
+<!-- <a href="/blog/">Blog</a> | --><a href="http://heartshapedsandbox.blogspot.com/">Lyrics of some songs</a><br>
+<a href="/me">About me</a><br>
+</nav>
+<article>
+<div class="center note" style="font-weight: bold;">This article is a verbatim copy of the <a href="http://edn.embarcadero.com/article/31863/">the original article published by Randy Miller</a></div>
+<section>
+<h2>Abstract</h2>
+<p>This tutorial provides a quick introduction to the Unified Modeling Language.</p>
+<p>The heart of object-oriented problem solving is the construction of a model. The model abstracts the essential details of the underlying problem from its usually complicated real world. Several modeling tools are wrapped under the heading of the UML, which stands for Unified Modeling Language. The purpose of this course is to present important highlights of the UML.</p>
+<p>At the center of the UML are its nine kinds of modeling diagrams, which we describe here.</p>
+<ul>
+<li><a href="#ucd">Use case diagrams</a>
+<li><a href="#cd">Class diagrams</a>
+<li><a href="#od">Object diagrams</a>
+<li><a href="#seqd">Sequence diagrams</a>
+<li><a href="#colabd">Collaboration diagrams</a>
+<li><a href="#sd">Statechart diagrams</a>
+<li><a href="#ad">Activity diagrams</a>
+<li><a href="#compd">Component diagrams</a>
+<li><a href="#dd">Deployment diagrams</a>
+</ul>
+</section>
+<section>
+<p>
+Some of the sections of this course contain links to pages with more detailed information. And every section has short questions. Use them to test your understanding of the section topic.</p>
+<h2>Why is UML important?</h2>
+<p>Let's look at this question from the point of view of the construction trade. Architects design buildings. Builders use the designs to create buildings. The more complicated the building, the more critical the communication between architect and builder. Blueprints are the standard graphical language that both architects and builders must learn as part of their trade.</p>
+<p>Writing software is not unlike constructing a building. The more complicated the underlying system, the more critical the communication among everyone involved in creating and deploying the software. In the past decade, the UML has emerged as the software blueprint language for analysts, designers, and programmers alike. It is now part of the software trade. The UML gives everyone from business analyst to designer to programmer a common vocabulary to talk about software design.</p>
+<p>The UML is applicable to object-oriented problem solving. Anyone interested in learning UML must be familiar with the underlying tenet of object-oriented problem solving &mdash; it all begins with the construction of a model. A model is an abstraction of the underlying problem. The <mark>domain</mark> is the actual world from which the problem comes.</p>
+<p>Models consist of <mark>objects</mark> that interact by sending each other <mark>messages</mark>. Think of an object as "alive." Objects have things they know (<mark>attributes</mark>) and things they can do (<mark>behaviors</mark> or <mark>operations</mark>). The values of an object's attributes determine its state.</p>
+<p><mark>Classes</mark> are the "blueprints" for objects. A class wraps attributes (data) and behaviors (methods or functions) into a single distinct entity. Objects are <mark>instances</mark> of classes.</p>
+</section>
+<section id="ucd">
+<h2>Use case diagrams</h2>
+<p><mark>Use case diagrams</mark> describe what a system does from the standpoint of an external observer. The emphasis is on <em>what</em> a system does rather than how.</p>
+<p>Use case diagrams are closely connected to scenarios. A <mark>scenario</mark> is an example of what happens when someone interacts with the system. Here is a scenario for a medical clinic.</p>
+<blockquote>A patient calls the clinic to make an appointment for a yearly checkup. The receptionist finds the nearest empty time slot in the appointment book and schedules the appointment for that time slot.</blockquote>
+<p>A <mark>use case</mark> is a summary of scenarios for a single task or goal. An <mark>actor</mark> is who or what initiates the events involved in that task. Actors are simply roles that people or objects play. The picture below is a <strong>Make Appointment</strong> use case for the medical clinic. The actor is a <strong>Patient</strong>. The connection between actor and use case is a <mark>communication association</mark> (or <mark>communication</mark> for short).</p>
+<div class="center"><img src="usecase.png" alt="Demostration of a simple use case"></div>
+<p>Actors are stick figures. Use cases are ovals. Communications are lines that link actors to use cases.</p>
+<p>A use case diagram is a collection of actors, use cases, and their communications. We've put <strong>Make Appointment</strong> as part of a diagram with four actors and four use cases. Notice that a single use case can have multiple actors.</p>
+<div class="center"><a href="uml1.uml" download><img src="UseCaseDiagram1.png" alt="Make Appointment"></a></div>
+<p>Use case diagrams are helpful in three areas:</p>
+<ul>
+<li><strong>determining features (requirements)</strong>: New use cases often generate new requirements as the system is analyzed and the design takes shape.<br>
+<li><strong>communicating with clients</strong>: Their notational simplicity makes use case diagrams a good way for developers to communicate with clients.<br>
+<li><strong>generating test cases</strong>: The collection of scenarios for a use case may suggest a suite of test cases for those scenarios.<br>
+</section>
+<section id="cd">
+<h2>Class diagrams</h2>
+<p>A <mark>class diagram</mark> gives an overview of a system by showing its classes and the relationships among them. Class diagrams are static -- they display what interacts but not what happens when they do interact.</p>
+<p>The class diagram below models a customer order from a retail catalog. The central class is the <strong>Order</strong>. Associated with it are the <strong>Customer</strong> making the purchase and the <strong>Payment</strong>. A <strong>Payment</strong> is one of three kinds: <strong>Cash</strong>, <strong>Check</strong>, or <strong>Credit</strong>. The order contains <strong>OrderDetails</strong> (line items), each with its associated <strong>Item</strong>.</p>
+<div class="center"><a href="uml2.uml" download><img src="UseCaseDiagram2.png" alt="Make Appointment"></a></div>
+</section>
+</article>
+</div>
+</body>
+</html>
+

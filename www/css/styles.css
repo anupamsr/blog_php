@@ -33,46 +33,111 @@
 	margin: 10px 10px 35px 10px;
 }
 
-blockquote {
-	background-color: #EEEEEE;
-	padding: 5px;
-}
-
-.center {
-	left: 0px;
-	width: 100%;
-	text-align: center;
-}
-
-footer {
-	position: absolute;
-	bottom: 0px;
-}
-
 body {
 	font-size: 100%;
+	word-wrap: break-word;
 }
 
 a {
-	letter-spacing: 3px;
+	letter-spacing: 0.19em;
 }
 
 a[href^="//"]:after,
 a[href^="http://"]:after, 
 a[href^="https://"]:after {
-  content: url(/images/Icon_External_Link.png);
-  margin: 0 0 0 5px;
+	content: url(/images/Icon_External_Link.png);
+	margin: 0 0 0 0.19em;
 }
 
 header {
 	position: relative;
-	margin: 10% 10px 150px;
 	text-align: center;
+	background: cornsilk;
+	padding: 1em 0em 1em 0em;
+	border-bottom: medium dotted steelblue;
+	border-radius: 1em;
+}
+
+nav {
+    line-height: 1.5em;
+	padding: 1em;
+	margin: 1em;
+	background: antiquewhite;
+	border-radius: 0.5em;
+	float: right;
+	width: 15em;
+}
+
+nav a {
+	text-decoration: none;
+}
+
+nav a:before {
+	content: "·";
+}
+
+article {
+	background-color: whitesmoke;
+	margin: 1em;
+	text-align: justify;
+	overflow: hidden;
+	border-radius: 0.5em;
+}
+
+section {
+	padding: 0em 1em 0em 1em;
+}
+
+h2, h3 {
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+h2 {
+	border-bottom: medium double black;
+}
+
+h3 {
+	border-bottom: thin solid black;
+}
+
+p {
+	line-height: 1.25em;
+	font-family: Georgia, serif;
+}
+
+code {
+	background-color: gainsboro;
+	overflow: hidden;
+}
+
+kbd {
+	background-color: white;
+	padding: 0.5em;
+	overflow: hidden;
+}
+
+.note {
+	background-color: powderblue;
+	padding: 0.5em;
+	overflow: hidden;
 }
 
 .serif-header {
 	font-style: normal;
 	font-weight: bold;
-	font-family: Times, serif;
+	font-family: Georgia, serif;
 	font-size: 2em;
+}
+
+.center {
+	left: 0em;
+	width: 100%;
+	text-align: center;
+}
+
+.captioned {
+    float: left;
+    margin: 1em;
+	text-align: center;
+	font-size: 80%;
 }
