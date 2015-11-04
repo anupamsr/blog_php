@@ -10,13 +10,15 @@
 <meta name="description" content="Practical UML">
 <meta charset="utf-8">
 <meta name="author" content="Anupam Srivastava">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/css/styles.css">
 <link rel="icon" type="image/png" href="/favicon.ico">
 </head>
 <body>
-<div style="position: relative; margin: auto; width: 90%">
+<div style="position: relative; margin: auto; width: 90%;">
 <header class="center serif-header">Practical UML: A Hands-On Introduction for Developers</header>
 <nav>
+<p id="nav">
 <a href="/resume">Resume</a><br>
 <a href="/cv">Curriculum Vit&aelig;</a><br>
 <a href="/guitar">Guitar</a><br>
@@ -24,7 +26,8 @@
 <a href="/sketches">Sketches</a><br>
 <a href="/fun">Fun</a><br>
 <!-- <a href="/blog/">Blog</a> | --><a href="http://heartshapedsandbox.blogspot.com/">Lyrics of some songs</a><br>
-<a href="/me">About me</a><br>
+<a href="/about">About me</a><br>
+</p>
 </nav>
 <article>
 <div class="center note" style="font-weight: bold;">This article is a verbatim copy of the <a href="http://edn.embarcadero.com/article/31863/">the original article published by Randy Miller</a></div>
@@ -61,24 +64,80 @@ Some of the sections of this course contain links to pages with more detailed in
 <p>Use case diagrams are closely connected to scenarios. A <mark>scenario</mark> is an example of what happens when someone interacts with the system. Here is a scenario for a medical clinic.</p>
 <blockquote>A patient calls the clinic to make an appointment for a yearly checkup. The receptionist finds the nearest empty time slot in the appointment book and schedules the appointment for that time slot.</blockquote>
 <p>A <mark>use case</mark> is a summary of scenarios for a single task or goal. An <mark>actor</mark> is who or what initiates the events involved in that task. Actors are simply roles that people or objects play. The picture below is a <strong>Make Appointment</strong> use case for the medical clinic. The actor is a <strong>Patient</strong>. The connection between actor and use case is a <mark>communication association</mark> (or <mark>communication</mark> for short).</p>
-<div class="center"><img src="usecase.png" alt="Demostration of a simple use case"></div>
+<div class="center embedded full"><img src="usecase.png" alt="Demostration of a simple use case"></div>
 <p>Actors are stick figures. Use cases are ovals. Communications are lines that link actors to use cases.</p>
 <p>A use case diagram is a collection of actors, use cases, and their communications. We've put <strong>Make Appointment</strong> as part of a diagram with four actors and four use cases. Notice that a single use case can have multiple actors.</p>
-<div class="center"><a href="uml1.uml" download><img src="UseCaseDiagram1.png" alt="Make Appointment"></a></div>
+<div class="center embedded full"><a href="uml1.uml" download><img src="UseCaseDiagram1.png" alt="Use case example"></a></div>
 <p>Use case diagrams are helpful in three areas:</p>
 <ul>
-<li><strong>determining features (requirements)</strong>: New use cases often generate new requirements as the system is analyzed and the design takes shape.<br>
-<li><strong>communicating with clients</strong>: Their notational simplicity makes use case diagrams a good way for developers to communicate with clients.<br>
-<li><strong>generating test cases</strong>: The collection of scenarios for a use case may suggest a suite of test cases for those scenarios.<br>
+<li><strong>determining features (requirements)</strong>: New use cases often generate new requirements as the system is analyzed and the design takes shape.
+<li><strong>communicating with clients</strong>: Their notational simplicity makes use case diagrams a good way for developers to communicate with clients.
+<li><strong>generating test cases</strong>: The collection of scenarios for a use case may suggest a suite of test cases for those scenarios.
+</ul>
 </section>
 <section id="cd">
 <h2>Class diagrams</h2>
 <p>A <mark>class diagram</mark> gives an overview of a system by showing its classes and the relationships among them. Class diagrams are static -- they display what interacts but not what happens when they do interact.</p>
 <p>The class diagram below models a customer order from a retail catalog. The central class is the <strong>Order</strong>. Associated with it are the <strong>Customer</strong> making the purchase and the <strong>Payment</strong>. A <strong>Payment</strong> is one of three kinds: <strong>Cash</strong>, <strong>Check</strong>, or <strong>Credit</strong>. The order contains <strong>OrderDetails</strong> (line items), each with its associated <strong>Item</strong>.</p>
-<div class="center"><a href="uml2.uml" download><img src="UseCaseDiagram2.png" alt="Make Appointment"></a></div>
+<div class="center embedded full"><a href="uml2.uml" download><img src="UseCaseDiagram2.png" alt="Class diagram example"></a></div>
+<p>UML class notation is a rectangle divided into three parts: class name, attributes, and operations. Names of abstract classes, such as <strong><i>Payment</i></strong>, are in italics. Relationships between classes are the connecting links.</p>
+<p>Our class diagram has three kinds of relationships:</p>
+<ul>
+<li><mark>association</mark> &mdash; a relationship between instances of the two classes. There is an association between two classes if an instance of one class must know about the other in order to perform its work. In a diagram, an association is a link connecting two classes.
+<li><mark>aggregation</mark> &mdash; an association in which one class belongs to a collection. An aggregation has a diamond end pointing to the part containing the whole. In our diagram, <strong>Order</strong> has a collection of <strong>OrderDetails</strong>.
+<li><mark>generalization</mark> &mdash; an inheritance link indicating one class is a superclass of the other. A generalization has a triangle pointing to the superclass. <strong><i>Payment</i></strong> is a superclass of <strong>Cash</strong>, <strong>Check</strong>, and <strong>Credit</strong>.
+</ul>
+<p>An association has two ends. An end may have a <mark>role name</mark> to clarify the nature of the association. For example, an <strong>OrderDetail</strong> is a line item of each <strong>Order</strong>.</p>
+<p>A <mark>navigability</mark> arrow on an association shows which direction the association can be traversed or queried. An <strong>OrderDetail</strong> can be queried about its <strong>Item</strong>, but not the other way around. The arrow also lets you know who "owns" the association's implementation; in this case, <strong>OrderDetail</strong> has an <strong>Item</strong>. Associations with no navigability arrows are bi-directional.</p>
+<p>The <mark>multiplicity</mark> of an association end is the number of possible instances of the class associated with a single instance of the other end. Multiplicities are single numbers or ranges of numbers. In our example, there can be only one <strong>Customer</strong> for each <strong>Order</strong>, but a <strong>Customer</strong> can have any number of <strong>Orders</strong>.</p>
+<p>This table gives the most common multiplicities:</p>
+<table>
+<tr>
+<th>Multiplicities</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td><strong>0..1</strong></td>
+<td>zero or one instance. The notation <strong>n..m</strong> indicates <strong>n</strong> to <strong>m</strong> instances.</td>
+</tr>
+<tr>
+<td><strong>0..*</strong> <em>or</em> <strong>*</strong></td>
+<td>no limit on the number of instances (including none).</td>
+</tr>
+<tr>
+<td><strong>1</strong></td>
+<td>exactly one instance.</td>
+</tr>
+<tr>
+<td><strong>1..*</strong></td>
+<td>at least one instance.</td>
+</tr>
+</table>
+<p>Every class diagram has classes, associations, and multiplicities. Navigability and roles are optional items placed in a diagram to provide clarity.</p>
 </section>
+<section>
+<h2>Packages and object diagrams</h2>
+<p>To simplify complex class diagrams, you can group classes into <mark>packages</mark>. A package is a collection of logically related UML elements. The diagram below is a business model in which the classes are grouped into packages.</p>
+<div class="center embedded full"><a href="uml3.uml" download><img src="UseCaseDiagram3.png" alt="Packages diagram example"></a></div>
+<p>Packages appear as rectangles with small tabs at the top. The package name is on the tab or inside the rectangle. The dotted arrows are <mark>dependencies</mark>. One package depends on another if changes in the other could possibly force changes in the first.</p>
+<p><mark>Object diagrams</mark> show instances instead of classes. They are useful for explaining small pieces with complicated relationships, especially recursive relationships.</p>
+<p>This small class diagram shows that a university <strong>Department</strong> can contain lots of other <strong>Departments</strong>.</p>
+<div class="center embedded full"><a href="uml4.uml" download><img src="UseCaseDiagram4.png" alt="Class diagram example"></a></div>
+<p>The object diagram below instantiates the class diagram, replacing it by a concrete example.</p>
+<div class="center embedded full"><a href="uml5.uml" download><img src="UseCaseDiagram5.png" alt="Object diagram example"></a></div>
+<p>Each rectangle in the object diagram corresponds to a single instance. Instance names are underlined in UML diagrams. Class or instance names may be omitted from object diagrams as long as the diagram meaning is still clear.</p>
+</section>
+<section>
+<h2>Sequence diagrams</h2>
+<p>Class and object diagrams are static model views. <mark>Interaction diagrams</mark> are dynamic. They describe how objects collaborate.</p>
+<p>A <mark>sequence diagram</mark> is an interaction diagram that details how operations are carried out -- what messages are sent and when. Sequence diagrams are organized according to time. The time progresses as you go down the page. The objects involved in the operation are listed from left to right according to when they take part in the message sequence.</p>
+<p>Below is a sequence diagram for making a hotel reservation. The object initiating the sequence of messages is a <strong>Reservation window</strong>.</p>
+<div class="center embedded full"><a href="uml6.uml" download><img src="UseCaseDiagram6.png" alt="Sequence diagram example"></a></div>
+<p>The <strong>Reservation window</strong> sends a <code>makeReservation()</code> message to a <strong>HotelChain</strong>. The <strong>HotelChain</strong> then sends a <code>makeReservation()</code> message to a <strong>Hotel</strong>. If the <strong>Hotel</strong> has available rooms, then it makes a <strong>Reservation</strong> and a <strong>Confirmation</strong>.</p>
+<p>Each vertical dotted line is a <mark>lifeline</mark>, representing the time that an object exists. Each arrow is a message call. An arrow goes from the sender to the top of the <mark>activation bar</mark> of the message on the receiver's lifeline. The activation bar represents the duration of execution of the message.</p>
+<p>In our diagram, the <strong>Hotel</strong> issues a <mark>self call</mark> to determine if a room is available. If so, then the <strong>Hotel</strong> creates a <strong>Reservation</strong>and a <strong>Confirmation</strong>. The asterisk on the self call means <mark>iteration</mark> (to make sure there is available room for each day of the stay in the hotel). The expression in square brackets, [ ], is a <mark>condition</mark>.</p>
+<p>The diagram has a clarifying <mark>note</mark>, which is text inside a dog-eared rectangle. Notes can be put into any kind of UML diagram.</p>
 </article>
 </div>
 </body>
 </html>
-

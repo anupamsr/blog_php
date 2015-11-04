@@ -60,12 +60,15 @@ header {
 
 nav {
     line-height: 1.5em;
-	padding: 1em;
-	margin: 1em;
 	background: antiquewhite;
 	border-radius: 0.5em;
 	float: right;
+	margin: 1em 0em 1em 1em;
 	width: 15em;
+}
+
+#nav {
+	padding: 0em 1em;
 }
 
 nav a {
@@ -78,7 +81,7 @@ nav a:before {
 
 article {
 	background-color: whitesmoke;
-	margin: 1em;
+	margin: 1em 1em 1em 0em;
 	text-align: justify;
 	overflow: hidden;
 	border-radius: 0.5em;
@@ -86,6 +89,7 @@ article {
 
 section {
 	padding: 0em 1em 0em 1em;
+	overflow: hidden;
 }
 
 h2, h3 {
@@ -111,9 +115,42 @@ code {
 }
 
 kbd {
-	background-color: white;
+	background-color: gainsboro;
 	padding: 0.5em;
+	border: thin solid black;
 	overflow: hidden;
+}
+
+img {
+	max-width: 100%;
+}
+
+table, th, td {
+	border: 1px solid darkslategray;
+	border-collapse: collapse;
+	padding: 0.5em;
+}
+
+table {
+	margin: 0em auto;
+}
+
+th {
+	background-color: lightgray;
+	text-align: center;
+}
+
+caption {
+	background-color: darkslategray;
+	font-weight: bold;
+	color: whitesmoke;
+}
+
+mark {
+	background-color: inherit;
+	color: darkred;
+	font-weight: bold;
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 .note {
@@ -136,8 +173,42 @@ kbd {
 }
 
 .captioned {
-    float: left;
-    margin: 1em;
 	text-align: center;
 	font-size: 80%;
+}
+
+.embedded {
+	float: left;
+	width: 35%;
+	margin: 1em;
+}
+
+.full {
+	width: 100%;
+}
+
+@media only screen and (max-width: 750px) {
+	.embedded {
+		width: 100%;
+		margin: 0em;
+	}
+
+	nav {
+		position: relative;
+		width: 100%;
+		float: none;
+		margin: 0em;
+	}
+
+	#nav{
+		padding: 1em 2em;
+	}
+
+	nav a:before {
+		content: none;
+	}
+
+	article {
+		margin: 0em;
+	}
 }
