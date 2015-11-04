@@ -26,7 +26,7 @@
       <fontname>Dialog</fontname>
       <fontsize>12</fontsize>
       <defaultstereotypeview>0</defaultstereotypeview>
-      <activediagram>Class Diagram 3</activediagram>
+      <activediagram>Class Diagram</activediagram>
     </settings>
     <searchpath href="PROJECT_DIR" />
     <members>
@@ -38,18 +38,6 @@
               name="uml2_ClassDiagram.pgml"
               diagramclass="org.argouml.uml.diagram.static_structure.ui.UMLClassDiagram"
               diagramname="Class Diagram" />
-      <member type="pgml"
-              name="uml2_UseCaseDiagram.pgml"
-              diagramclass="org.argouml.uml.diagram.use_case.ui.UMLUseCaseDiagram"
-              diagramname="Use Case Diagram" />
-      <member type="pgml"
-              name="uml2.pgml"
-              diagramclass="org.argouml.uml.diagram.static_structure.ui.UMLClassDiagram"
-              diagramname="" />
-      <member type="pgml"
-              name="uml2_ClassDiagram3.pgml"
-              diagramclass="org.argouml.uml.diagram.static_structure.ui.UMLClassDiagram"
-              diagramname="Class Diagram 3" />
       <member type="todo"
               name="uml2.todo" />
     </members>
@@ -66,7 +54,7 @@
 			CodeGeneration
 		</plugin>
 </profile>
-<XMI xmi.version = '1.2' xmlns:UML = 'org.omg.xmi.namespace.UML' timestamp = 'Wed Nov 04 19:10:06 IST 2015'>
+<XMI xmi.version = '1.2' xmlns:UML = 'org.omg.xmi.namespace.UML' timestamp = 'Thu Nov 05 00:30:54 IST 2015'>
   <XMI.header>    <XMI.documentation>
       <XMI.exporter>ArgoUML (using Netbeans XMI Writer version 1.0)</XMI.exporter>
       <XMI.exporterVersion>0.34(6) revised on $Date: 2010-01-11 22:20:14 +0100 (Mon, 11 Jan 2010) $ </XMI.exporterVersion>
@@ -729,18 +717,6 @@
 </XMI>
 <pgml description="org.argouml.uml.diagram.static_structure.ui.UMLClassDiagram|10-107--116--126--1c4bb395:150cd565484:-8000:0000000000000983"
       name="Class Diagram"
->
-</pgml>
-<pgml description="org.argouml.uml.diagram.use_case.ui.UMLUseCaseDiagram|10-107--116--126--1c4bb395:150cd565484:-8000:0000000000000983"
-      name="Use Case Diagram"
->
-</pgml>
-<pgml description="org.argouml.uml.diagram.static_structure.ui.UMLClassDiagram|10-107--116--126--1c4bb395:150cd565484:-8000:0000000000000983"
-      name=""
->
-</pgml>
-<pgml description="org.argouml.uml.diagram.static_structure.ui.UMLClassDiagram|10-107--116--126--1c4bb395:150cd565484:-8000:0000000000000983"
-      name="Class Diagram 3"
 >
   <group name="Fig0"
        description="org.argouml.uml.diagram.static_structure.ui.FigClass[64, 80, 101, 88]pathVisible=false;stereotypeView=0;operationsVisible=true;attributesVisible=true;"

@@ -26,7 +26,7 @@
       <fontname>Dialog</fontname>
       <fontsize>12</fontsize>
       <defaultstereotypeview>0</defaultstereotypeview>
-      <activediagram>Class Diagram 10</activediagram>
+      <activediagram>Class Diagram</activediagram>
     </settings>
     <searchpath href="PROJECT_DIR" />
     <members>
@@ -35,21 +35,9 @@
       <member type="xmi"
               name="uml3.xmi" />
       <member type="pgml"
-              name="uml3_ClassDiagram.pgml"
-              diagramclass="org.argouml.uml.diagram.static_structure.ui.UMLClassDiagram"
-              diagramname="Class Diagram" />
-      <member type="pgml"
-              name="uml3_UseCaseDiagram.pgml"
-              diagramclass="org.argouml.uml.diagram.use_case.ui.UMLUseCaseDiagram"
-              diagramname="Use Case Diagram" />
-      <member type="pgml"
               name="uml3_SequenceDiagram.pgml"
               diagramclass="org.argouml.sequence2.diagram.UMLSequenceDiagram"
               diagramname="Sequence Diagram" />
-      <member type="pgml"
-              name="uml3_ClassDiagram3.pgml"
-              diagramclass="org.argouml.uml.diagram.static_structure.ui.UMLClassDiagram"
-              diagramname="Class Diagram 3" />
       <member type="pgml"
               name="uml3_CollaborationDiagram.pgml"
               diagramclass="org.argouml.uml.diagram.collaboration.ui.UMLCollaborationDiagram"
@@ -63,21 +51,13 @@
               diagramclass="org.argouml.uml.diagram.activity.ui.UMLActivityDiagram"
               diagramname="untitledModel activity 1" />
       <member type="pgml"
-              name="uml3_DeploymentDiagram.pgml"
-              diagramclass="org.argouml.uml.diagram.deployment.ui.UMLDeploymentDiagram"
-              diagramname="Deployment Diagram" />
-      <member type="pgml"
-              name="uml3_UseCaseDiagram8.pgml"
-              diagramclass="org.argouml.uml.diagram.use_case.ui.UMLUseCaseDiagram"
-              diagramname="Use Case Diagram 8" />
-      <member type="pgml"
               name="uml3_SequenceDiagram9.pgml"
               diagramclass="org.argouml.sequence2.diagram.UMLSequenceDiagram"
               diagramname="Sequence Diagram 9" />
       <member type="pgml"
-              name="uml3_ClassDiagram10.pgml"
+              name="uml3_ClassDiagram.pgml"
               diagramclass="org.argouml.uml.diagram.static_structure.ui.UMLClassDiagram"
-              diagramname="Class Diagram 10" />
+              diagramname="Class Diagram" />
       <member type="todo"
               name="uml3.todo" />
     </members>
@@ -94,7 +74,7 @@
 			CodeGeneration
 		</plugin>
 </profile>
-<XMI xmi.version = '1.2' xmlns:UML = 'org.omg.xmi.namespace.UML' timestamp = 'Wed Nov 04 19:33:21 IST 2015'>
+<XMI xmi.version = '1.2' xmlns:UML = 'org.omg.xmi.namespace.UML' timestamp = 'Thu Nov 05 00:32:16 IST 2015'>
   <XMI.header>    <XMI.documentation>
       <XMI.exporter>ArgoUML (using Netbeans XMI Writer version 1.0)</XMI.exporter>
       <XMI.exporterVersion>0.34(6) revised on $Date: 2010-01-11 22:20:14 +0100 (Mon, 11 Jan 2010) $ </XMI.exporterVersion>
@@ -276,20 +256,8 @@
     </UML:Model>
   </XMI.content>
 </XMI>
-<pgml description="org.argouml.uml.diagram.static_structure.ui.UMLClassDiagram|10-107--116--126-6980c4b5:150d2ba1683:-8000:0000000000000CDA"
-      name="Class Diagram"
->
-</pgml>
-<pgml description="org.argouml.uml.diagram.use_case.ui.UMLUseCaseDiagram|10-107--116--126-6980c4b5:150d2ba1683:-8000:0000000000000CDA"
-      name="Use Case Diagram"
->
-</pgml>
 <pgml description="org.argouml.sequence2.diagram.UMLSequenceDiagram|10-107--116--126-6980c4b5:150d2ba1683:-8000:0000000000000CDB"
       name="Sequence Diagram"
->
-</pgml>
-<pgml description="org.argouml.uml.diagram.static_structure.ui.UMLClassDiagram|10-107--116--126-6980c4b5:150d2ba1683:-8000:0000000000000CDA"
-      name="Class Diagram 3"
 >
 </pgml>
 <pgml description="org.argouml.uml.diagram.collaboration.ui.UMLCollaborationDiagram|10-107--116--126-6980c4b5:150d2ba1683:-8000:0000000000000CDC"
@@ -304,20 +272,12 @@
       name="untitledModel activity 1"
 >
 </pgml>
-<pgml description="org.argouml.uml.diagram.deployment.ui.UMLDeploymentDiagram|10-107--116--126-6980c4b5:150d2ba1683:-8000:0000000000000CDA"
-      name="Deployment Diagram"
->
-</pgml>
-<pgml description="org.argouml.uml.diagram.use_case.ui.UMLUseCaseDiagram|10-107--116--126-6980c4b5:150d2ba1683:-8000:0000000000000CDA"
-      name="Use Case Diagram 8"
->
-</pgml>
 <pgml description="org.argouml.sequence2.diagram.UMLSequenceDiagram|10-107--116--126-6980c4b5:150d2ba1683:-8000:0000000000000CE1"
       name="Sequence Diagram 9"
 >
 </pgml>
 <pgml description="org.argouml.uml.diagram.static_structure.ui.UMLClassDiagram|10-107--116--126-6980c4b5:150d2ba1683:-8000:0000000000000CDA"
-      name="Class Diagram 10"
+      name="Class Diagram"
 >
   <group name="Fig0"
        description="org.argouml.uml.diagram.static_structure.ui.FigPackage[160, 168, 139, 100]pathVisible=false;stereotypeView=0;stereotypeVisible=true;visibilityVisible=false"
@@ -1031,7 +991,7 @@
                         offset="25" />
     </private>
     <path name="Fig7.0"
-      description="org.tigris.gef.presentation.FigPoly"
+      description="org.argouml.gefext.ArgoFigPoly"
       fill="0"
       fillcolor="white"
       stroke="1"
@@ -1062,7 +1022,7 @@
                         offset="25" />
     </private>
     <path name="Fig8.0"
-      description="org.tigris.gef.presentation.FigPoly"
+      description="org.argouml.gefext.ArgoFigPoly"
       fill="0"
       fillcolor="white"
       stroke="1"
@@ -1093,7 +1053,7 @@
                         offset="25" />
     </private>
     <path name="Fig9.0"
-      description="org.tigris.gef.presentation.FigPoly"
+      description="org.argouml.gefext.ArgoFigPoly"
       fill="0"
       fillcolor="white"
       stroke="1"
@@ -1124,7 +1084,7 @@
                         offset="25" />
     </private>
     <path name="Fig10.0"
-      description="org.tigris.gef.presentation.FigPoly"
+      description="org.argouml.gefext.ArgoFigPoly"
       fill="0"
       fillcolor="white"
       stroke="1"
@@ -1155,7 +1115,7 @@
                         offset="25" />
     </private>
     <path name="Fig11.0"
-      description="org.tigris.gef.presentation.FigPoly"
+      description="org.argouml.gefext.ArgoFigPoly"
       fill="0"
       fillcolor="white"
       stroke="1"
@@ -1186,7 +1146,7 @@
                         offset="25" />
     </private>
     <path name="Fig12.0"
-      description="org.tigris.gef.presentation.FigPoly"
+      description="org.argouml.gefext.ArgoFigPoly"
       fill="0"
       fillcolor="white"
       stroke="1"
@@ -1217,7 +1177,7 @@
                         offset="25" />
     </private>
     <path name="Fig13.0"
-      description="org.tigris.gef.presentation.FigPoly"
+      description="org.argouml.gefext.ArgoFigPoly"
       fill="0"
       fillcolor="white"
       stroke="1"
@@ -1248,7 +1208,7 @@
                         offset="25" />
     </private>
     <path name="Fig14.0"
-      description="org.tigris.gef.presentation.FigPoly"
+      description="org.argouml.gefext.ArgoFigPoly"
       fill="0"
       fillcolor="white"
       stroke="1"
