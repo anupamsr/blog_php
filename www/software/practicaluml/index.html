@@ -44,8 +44,8 @@
 <li><a href="#colabd">Collaboration diagrams</a>
 <li><a href="#sd">Statechart diagrams</a>
 <li><a href="#ad">Activity diagrams</a>
-<li><a href="#compd">Component diagrams</a>
-<li><a href="#dd">Deployment diagrams</a>
+<li><a href="#cdd">Component diagrams</a>
+<li><a href="#cdd">Deployment diagrams</a>
 </ul>
 </section>
 <section>
@@ -115,7 +115,7 @@ Some of the sections of this course contain links to pages with more detailed in
 </table>
 <p>Every class diagram has classes, associations, and multiplicities. Navigability and roles are optional items placed in a diagram to provide clarity.</p>
 </section>
-<section>
+<section id="od">
 <h2>Packages and object diagrams</h2>
 <p>To simplify complex class diagrams, you can group classes into <mark>packages</mark>. A package is a collection of logically related UML elements. The diagram below is a business model in which the classes are grouped into packages.</p>
 <div class="center embedded full"><img src="UseCaseDiagram3.png" alt="Packages diagram example"></div>
@@ -127,7 +127,7 @@ Some of the sections of this course contain links to pages with more detailed in
 <div class="center embedded full"><img src="UseCaseDiagram5.png" alt="Object diagram example"></div>
 <p>Each rectangle in the object diagram corresponds to a single instance. Instance names are underlined in UML diagrams. Class or instance names may be omitted from object diagrams as long as the diagram meaning is still clear.</p>
 </section>
-<section>
+<section id="seqd">
 <h2>Sequence diagrams</h2>
 <p>Class and object diagrams are static model views. <mark>Interaction diagrams</mark> are dynamic. They describe how objects collaborate.</p>
 <p>A <mark>sequence diagram</mark> is an interaction diagram that details how operations are carried out -- what messages are sent and when. Sequence diagrams are organized according to time. The time progresses as you go down the page. The objects involved in the operation are listed from left to right according to when they take part in the message sequence.</p>
@@ -135,9 +135,44 @@ Some of the sections of this course contain links to pages with more detailed in
 <div class="center embedded full"><img src="UseCaseDiagram6.png" alt="Sequence diagram example"></div>
 <p>The <strong>Reservation window</strong> sends a <code>makeReservation()</code> message to a <strong>HotelChain</strong>. The <strong>HotelChain</strong> then sends a <code>makeReservation()</code> message to a <strong>Hotel</strong>. If the <strong>Hotel</strong> has available rooms, then it makes a <strong>Reservation</strong> and a <strong>Confirmation</strong>.</p>
 <p>Each vertical dotted line is a <mark>lifeline</mark>, representing the time that an object exists. Each arrow is a message call. An arrow goes from the sender to the top of the <mark>activation bar</mark> of the message on the receiver's lifeline. The activation bar represents the duration of execution of the message.</p>
-<p>In our diagram, the <strong>Hotel</strong> issues a <mark>self call</mark> to determine if a room is available. If so, then the <strong>Hotel</strong> creates a <strong>Reservation</strong>and a <strong>Confirmation</strong>. The asterisk on the self call means <mark>iteration</mark> (to make sure there is available room for each day of the stay in the hotel). The expression in square brackets, [ ], is a <mark>condition</mark>.</p>
+<p>In our diagram, the <strong>Hotel</strong> issues a <mark>self-call</mark> to determine if a room is available. If so, then the <strong>Hotel</strong> creates a <strong>Reservation</strong> and a <strong>Confirmation</strong>. The asterisk on the self-call means <mark>iteration</mark> (to make sure there is available room for each day of the stay in the hotel). The expression in square brackets, [ ], is a <mark>condition</mark>.</p>
 <p>The diagram has a clarifying <mark>note</mark>, which is text inside a dog-eared rectangle. Notes can be put into any kind of UML diagram.</p>
-</article>
+</section>
+<section id="colabd">
+<h2>Collaboration diagrams</h2>
+<p><mark>Collaboration diagrams</mark> are also interaction diagrams. They convey the same information as sequence diagrams, but they focus on object roles instead of the times that messages are sent. In a sequence diagram, object roles are the vertices and messages are the connecting links.</p>
+<div class="center embedded full"><img src="UseCaseDiagram7.png" alt="Collaboration diagram example"></div>
+<p>The object-role rectangles are labeled with either class or object names (or both). Class names are preceded by colons (<q>:</q>).</p>
+<p>Each message in a collaboration diagram has a <mark>sequence number</mark>. The top-level message is numbered 1. Messages at the same level (sent during the same call) have the same decimal prefix but suffixes of 1, 2, etc. according to when they occur.</p>
+</section>
+<section id="sd">
+<h2>Statechart diagrams</h2>
+<p>Objects have behaviors and state. The state of an object depends on its current activity or condition. A <mark>statechart diagram</mark> shows the possible states of the object and the transitions that cause a change in state.</p>
+<p>Our example diagram models the login part of an online banking system. Logging in consists of entering a valid social security number and personal id number, then submitting the information for validation.</p>
+<p>Logging in can be factored into four non-overlapping states: <strong>Getting SSN</strong>, <strong>Getting PIN</strong>, <strong>Validating</strong> and <strong>Rejecting</strong>. From each state comes a complete set of <mark>transitions</mark> that determine the subsequent state.</p>
+<div class="center embedded full"><img src="UseCaseDiagram8.png" alt="Statechart diagram example"></div>
+<p>States are rounded rectangles. Transitions are arrows from one state to another. Events or conditions that trigger transitions are written beside the arrows. Our diagram has two self-transition, one on <strong>Getting SSN</strong> and another on <strong>Getting PIN</strong>.</p>
+<p>The initial state (black circle) is a dummy to start the action. Final states are also dummy states that terminate the action.</p>
+<p>The action that occurs as a result of an event or condition is expressed in the form <code>/action</code>. While in its <strong>Validating</strong> state, the object does not wait for an outside event to trigger a transition. Instead, it performs an activity. The result of that activity determines its subsequent state.</p>
+</section>
+<section id="ad">
+<h2>Activity diagrams</h2>
+<p>An <mark>activity diagram</mark> is essentially a fancy flowchart. Activity diagrams and statechart diagrams are related. While a statechart diagram focuses attention on an object undergoing a process (or on a process as on object), an activity diagram focuses on the flow of activities involved in a single process. The activity diagram shows how those activities depend on one another.</p>
+<p>For our example, we used the following process:</p>
+<blockquote>Withdraw money from a bank account thorough an ATM.</blockquote>
+<p>The three involved classes (people, etc.) of the activity are <strong>Customer</strong>, <strong>ATM</strong> and <strong>Bank</strong>. The process begins at the black start circle at the top and ends at the concentric white/black stop circles at the bottom. The activities are rounded rectangles.</p>
+<div class="center embedded full"><img src="UseCaseDiagram9.png" alt="Activity diagram example"></div>
+<p>Activity diagrams can be divided into object <mark>swimlanes</mark> that determine which object is responsible for which activity. A single <mark>transition</mark> comes out of each activity, connecting it to the next activity.</p>
+<p>A transition may <mark>branch</mark> into two or more mutually exclusive transitions. <mark>Guard expressions</mark> (inside <q>[ ]</q>) label the transitions coming out of a branch. A branch and its subsequent <mark>merge</mark>, marking the end of the branch, appear in the diagram as hollow diamonds.</p>
+<p>A transition may <mark>fork</mark> into two or more parallel activities. The fork and the subsequent <mark>join</mark> of the threads coming out of the fork appear in the diagram as solid bars.</p>
+</section>
+<section id="cdd">
+<h2>Component and deployment diagrams</h2>
+<p>A <mark>component</mark> is a code module. Component diagrams are physical analogs of class diagram. <mark>Deployment diagrams</mark> show the physical configurations of software and hardware.</p>
+<p>The following deployment diagram shows the relationships among software and hardware components involved in real estate transactions.</p>
+<div class="center embedded full"><img src="UseCaseDiagram9.png" alt="Component and deployment diagram example"></div>
+<p>The physical hardware is made up of <mark>nodes</mark>. Each component belongs in a node. Components are shown as rectangles with two tabs at the upper left part.</p>
+</section>
 </div>
 </body>
 </html>
