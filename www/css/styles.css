@@ -36,51 +36,61 @@
 body {
 	font-size: 100%;
 	word-wrap: break-word;
+	background-color: #98dafc;
 }
 
 a {
-	letter-spacing: 0.19em;
+	letter-spacing: 0.1em;
 }
 
 a[href^="//"]:after,
 a[href^="http://"]:after, 
 a[href^="https://"]:after {
 	content: url(/images/Icon_External_Link.png);
-	margin: 0 0 0 0.19em;
+	margin: 0 0 0 0.1em;
 }
 
 header {
 	position: relative;
 	text-align: center;
-	background: cornsilk;
+	background: url(/images/tweed.png);
+	background-repeat: repeat;
 	padding: 1em 0em 1em 0em;
-	border-bottom: medium dotted steelblue;
+	border-bottom: medium solid #222222;
 	border-radius: 1em;
+	color: #feffff;
 }
 
 nav {
-    line-height: 1.5em;
-	background: antiquewhite;
+	background: #daad86;
 	border-radius: 0.5em;
 	float: right;
 	margin: 1em 0em 1em 1em;
 	width: 15em;
 }
 
-#nav {
-	padding: 0em 1em;
+nav a:link , nav a:visited {
+    color: black;
+	text-decoration: underline;
 }
 
-nav a {
-	text-decoration: none;
+nav a:hover, nav a:active {
+	color: firebrick;
+	font-weight: bold;
+	text-decoration: underline;
 }
 
 nav a:before {
-	content: "·";
+	content: "◀ ";
+}
+
+#nav {
+	line-height: 1.5em;
+	padding: 0em 1em;
 }
 
 article {
-	background-color: whitesmoke;
+	background-color: #feffff;
 	margin: 1em 1em 1em 0em;
 	text-align: justify;
 	overflow: hidden;
@@ -88,6 +98,7 @@ article {
 }
 
 section {
+	color: #312c32;
 	padding: 0em 1em 0em 1em;
 	overflow: hidden;
 }
@@ -154,9 +165,21 @@ mark {
 }
 
 .note {
-	background-color: powderblue;
+	background-image: url(/images/low_contrast_linen.png);
+	background-repeat: repeat;
+	color: white;
 	padding: 0.5em;
 	overflow: hidden;
+}
+
+.note a:link , .note a:visited {
+	color: cornsilk;
+	letter-spacing: 0em;
+}
+
+.note a:hover, .note a:active {
+	color: paleturquoise;
+	letter-spacing: 0em;
 }
 
 .serif-header {
