@@ -167,7 +167,8 @@ p {
 
 code, kbd {
 	color: black;
-	overflow: hidden;
+	overflow: visible;
+	white-space: pre-wrap;
 }
 
 kbd:before {
